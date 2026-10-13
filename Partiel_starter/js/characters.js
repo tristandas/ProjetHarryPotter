@@ -4,9 +4,11 @@ let characters = [];
 
 class Character {
   constructor(data) {
+    this.id = data.id;
     this.name = data.name;
     this.image = data.image || "./images/troll.jpg";
     this.house = data.house;
+    this.alive = data.alive;
   }
 }
 
@@ -37,6 +39,12 @@ function showCharacters(list) {
     };
     name.textContent = character.name;
 
+    card.addEventListener("click", () => {
+      const params = new URLSearchParams();
+      params.set("id", character.id);
+      window.location.href = `./details.html?${params.toString()}`;
+    });
+
     card.append(image, name);
     charactersContainer.appendChild(card);
   });
@@ -55,7 +63,7 @@ document.querySelectorAll(".houses > div").forEach((house) => {
 fetch(API_URL)
   .then((response) => response.json())
   .then((data) => {
-    characters = data.slice(0, 20).map((character) => new Character(character));
+    characters = data.map((character) => new Character(character));
     showCharacters(characters);
   })
   .catch((error) => {
