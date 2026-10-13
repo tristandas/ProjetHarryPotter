@@ -144,6 +144,18 @@ footer p {
   text-align: center;
   color: var(--Gold, #b99049);
 }
+.characters > div:hover img.p_griff { 
+  border-color: var(--red); 
+}
+.characters > div:hover img.p_serp { 
+  border-color: var(--green); 
+}
+.characters > div:hover img.p_pour { 
+  border-color: var(--yellow); 
+}
+.characters > div:hover img.p_serd { 
+  border-color: var(--blue); 
+}
 
 /* PAGE PERSO */
 .page_perso h3 {
@@ -163,6 +175,8 @@ footer p {
 .page_perso .perso__right > div {
   display: flex;
   justify-content: space-around;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 .page_perso .perso__right p.attr {
   font-weight: bold;
