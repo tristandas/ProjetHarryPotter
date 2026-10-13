@@ -202,7 +202,11 @@ footer p {
   align-items: center;
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 600px) {
+  main {
+    width: 100%;
+  }
+
   header {
     width: 90%;
   }
@@ -220,8 +224,60 @@ header ul {
   }
 
   .houses {
+    justify-content: center;
+    gap: 10px;
+    padding: 20px 10px;
+  }
+
+  .houses > div {
+    width: 120px;
+    height: 120px;
+  }
+
+  .houses img {
+    width: 100px;
+    height: 110px;
+  }
+
+  .characters {
+    padding: 10px;
+  }
+
+  .characters > div {
+    padding: 10px;
+  }
+
+  .characters img {
+    width: 110px;
+    height: 110px;
+  }
+
+  .page_perso .perso {
     flex-direction: column;
-    align-content: space-around;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .page_perso figure {
+    width: min(215px, 100%);
+    margin-right: 0;
+  }
+
+  .page_perso .perso__right {
+    gap: 14px;
+  }
+
+  .page_perso .house__perso img {
+    max-width: 140px;
+  }
+
+  .page_perso h3 {
+    padding: 30px 15px 0;
+  }
+
+  main h3 {
+    font-size: 26px;
   }
 }
 
